@@ -16,7 +16,7 @@ function NavBar(){
     return (
 
         <NavBarContainer>
-            <h3>Pokemon</h3>
+            <h3>Pokemon</h3>    
             <button onClick={goToHome}>Home</button>
             <button onClick={goToPokedex}>Pokedex</button>
         </NavBarContainer>
