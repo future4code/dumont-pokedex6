@@ -1,9 +1,13 @@
+import React from  "react";
+import NavBar from "../NavBar/index";
+
 
 function Home() {
   return (
-    <div>
-      Home
-    </div>
+    <>
+      <NavBar />
+      <p>Home </p>
+    </>
   );
 }
 
