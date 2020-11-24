@@ -15,15 +15,15 @@ function NavBar(){
     }
 
     const url = window.location.href;
+    const checkUrl = url.includes("home")
 
     return (
         <NavBarContainer>
             <div>
-            <Logo src={LogoPokedex} alt="Logo Pokebola" onClick={() => goToHome(history) }/>
+            <Logo src={LogoPokedex} alt="Logo Pokebola" onClick={() => goToHome(history) } />
             </div>
             <div>
-            <NavButtons onClick={goToHome}>Home</NavButtons>
-            <NavButtons onClick={goToPokedex}>Ver minha Pokedex</NavButtons>
+            <NavButtons {checkUrl ? "Ir para pokedex" : "Voltar para home"} />
             <NavButtons>Voltar</NavButtons>
             </div>
         </NavBarContainer>
