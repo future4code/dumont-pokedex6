@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.section`
   min-width: 150px;
-  min-height: 270px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
   margin-bottom: 32px;
+  box-shadow: 10px 5px 10px 3px rgba(0, 0, 0, 0.7);
 
   @media(max-width: 1150px) {
     margin-bottom: 50px;
+    min-height: 330px;
   }
 `
 export const PokemonImageContainer = styled.div`
@@ -18,7 +21,7 @@ export const PokemonImageContainer = styled.div`
   width: 100%;
   min-height: 170px;
   max-height: 170px;
-  background-color: #FFFFFF;
+  background-color: #F2F2F2;
   border-radius: 5px;
 `
 export const PokemonImage = styled.img`
