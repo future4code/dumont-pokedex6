@@ -2,7 +2,7 @@ export const goBack = (history) => {
     history.goBack();
   };
   
-export const goToHomePage = (history) => {
+export const goToHome = (history) => {
     history.push("/");
   };
    

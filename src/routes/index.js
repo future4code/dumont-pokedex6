@@ -1,5 +1,4 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-
 import Home from '../screens/Home';
 import Pokedex from '../screens/Pokedex';
 import PokemonDetails from '../screens/PokemonDetails';
