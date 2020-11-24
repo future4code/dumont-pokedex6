@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { NavBarContainer, NavButtons } from "./styles"
-import LogoPokedex from "../../img/pokedex.min.png"
+import { NavBarContainer, NavButtons, Logo } from "./styles"
+import LogoPokedex from "../../img/pokebola.png"
 
 function NavBar(){
     const history = useHistory();
@@ -14,11 +14,18 @@ function NavBar(){
         history.push("/pokedex")
     }
 
+    const url = window.location.href;
+
     return (
         <NavBarContainer>
-            <img src={LogoPokedex} alt="Logo Pokedex Amarelo e Azul" width="150px" height="89px"/>
+            <div>
+            <Logo src={LogoPokedex} alt="Logo Pokebola" onClick={() => goToHome(history) }/>
+            </div>
+            <div>
             <NavButtons onClick={goToHome}>Home</NavButtons>
-            <NavButtons onClick={goToPokedex}>Pokedex</NavButtons>
+            <NavButtons onClick={goToPokedex}>Ver minha Pokedex</NavButtons>
+            <NavButtons>Voltar</NavButtons>
+            </div>
         </NavBarContainer>
     )
 } 
