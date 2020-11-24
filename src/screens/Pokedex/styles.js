@@ -10,7 +10,7 @@ export const CardsContainer = styled.article`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 10px;
-  gap: 15px;
+  gap: 20px;
   box-sizing: border-box;
 
   @media(max-width: 420px) {

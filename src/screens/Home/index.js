@@ -1,6 +1,4 @@
-
 import React, { useEffect } from 'react';
-import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 /*Hooks*/
@@ -25,7 +23,6 @@ const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 export default function Home(props) {
   const { pokedexList, setPokedexList, pokedexHomeList, setPokedexHomeList } = props
   const pokemonsName = useRequestData(baseUrl, [])
-  const history = useHistory();
 
   const getPokemonsDetails = async () => {
     let copyArray = []
@@ -74,7 +71,6 @@ export default function Home(props) {
 
   return (
     <AppContainer>
-      <button onClick={() => history.push('/pokedex')}>Pokedex</button>
       <CardsContainer>
         {pokedexHomeList.length === 0 ?
           <Loading src={Pokeball} />

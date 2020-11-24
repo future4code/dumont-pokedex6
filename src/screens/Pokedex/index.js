@@ -1,5 +1,3 @@
-import {useHistory} from 'react-router-dom';
-
 /*Components*/
 import Card from "../../components/Card";
 
@@ -15,7 +13,6 @@ import {
 
 export default function Pokedex(props) {
   const { pokedexList, pokedexHomeList, setPokedexHomeList } = props
-  const history = useHistory();
 
   const removePokedex = (newPokemon) => {
     const index = pokedexList.findIndex((i) => i.id === newPokemon.id);
@@ -26,7 +23,6 @@ export default function Pokedex(props) {
   
   return (
     <AppContainer>
-      <button onClick={() => history.push('/')}>Home</button>
       <CardsContainer>
         {pokedexList.length === 0 ?
           <Loading src={Pokeball}/>

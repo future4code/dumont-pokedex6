@@ -8,6 +8,7 @@ export const CardContainer = styled.section`
   border-radius: 10px;
   margin-bottom: 32px;
   box-shadow: 10px 5px 10px 3px rgba(0, 0, 0, 0.7);
+  background-color: #FFFFFF;
 
   @media(max-width: 1150px) {
     margin-bottom: 50px;
@@ -23,6 +24,7 @@ export const PokemonImageContainer = styled.div`
   max-height: 170px;
   background-color: #F2F2F2;
   border-radius: 5px;
+  border-radius: 10px;
 `
 export const PokemonImage = styled.img`
   object-fit: cover;
