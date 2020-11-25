@@ -1,8 +1,13 @@
 import Router from '../src/routes'
 
+/*Contexts*/
+import GlobalState from "./global/GlobalState";
+
 function App() {
   return (
-    <Router />
+    <GlobalState>
+      <Router />
+    </GlobalState>
   );
 }
 
