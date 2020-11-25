@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useContext } from 'react';
 
-/*Hooks*/
-import useRequestData from '../../hooks/useRequestData';
+/*Contexts*/
+import GlobalStateContext from "../../global/GlobalStateContext";
 
 /*Components*/
 import Card from "../../components/Card";
@@ -17,65 +16,29 @@ import {
   Loading
 } from './styles';
 
-/*Constantes reutulizáveis*/
-const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
-export default function Home(props) {
-  const { pokedexList, setPokedexList, pokedexHomeList, setPokedexHomeList } = props
-  const pokemonsName = useRequestData(baseUrl, [])
-
-  const getPokemonsDetails = async () => {
-    let copyArray = []
-    try {
-      for (const pokemon of pokemonsName) {
-        const res = await axios.get(`${baseUrl}${pokemon.name}`)
-        copyArray.push(res.data)
-      }
-    } catch (error) {
-      console.log(error)
-    }
-    
-    if (pokedexHomeList.length === 0 && pokedexList.length === 0) {
-      setPokedexHomeList(copyArray)
-    } else {
-      orderPokemons()
-    }    
-  }
-
-  const addPokedex = (newPokemon) => {
-    const index = pokedexHomeList.findIndex((i) => i.id === newPokemon.id);
-    const newPokedex = [...pokedexList, newPokemon]
-    setPokedexList(newPokedex);
-    pokedexHomeList.splice(index, 1)
-  };
-
-  const orderPokemons = () => {
-    let orderedPokemons = []
-      orderedPokemons = pokedexHomeList.sort((a, b) => {
-        if (a.order > b.order) {
-          return 1;
-        }
-        if (a.order < b.order) {
-          return -1;
-        }
-        return 0;
-      })
-
-      
-      setPokedexHomeList(orderedPokemons);
-  }
+export default function Home() {
+  const { states, setters, requests } = useContext(GlobalStateContext);
 
   useEffect(() => {
-    getPokemonsDetails()
-  }, [pokemonsName])
+    requests.getPokemonsDetails();
+    requests.orderPokemons()
+  }, [states, setters, requests]);
+
+  const addPokedex = (newPokemon) => {
+    const index = states.pokedexHomeList.findIndex((i) => i.id === newPokemon.id);
+    const newPokedex = [...states.pokedexList, newPokemon]
+    setters.setPokedexList(newPokedex);
+    states.pokedexHomeList.splice(index, 1)
+  };
 
   return (
     <AppContainer>
       <CardsContainer>
-        {pokedexHomeList.length === 0 ?
+        {states.pokedexHomeList.length === 0 ?
           <Loading src={Pokeball} />
           : (
-            pokedexHomeList.map(pokemon => {
+            states.pokedexHomeList.map(pokemon => {
               const pokemonName = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.substr(1).toLowerCase()}`
               return (
                 <Card
