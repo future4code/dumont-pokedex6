@@ -1,27 +1,25 @@
-import {useState} from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+
+/*Screens*/
 import Home from '../screens/Home';
 import Pokedex from '../screens/Pokedex';
 import PokemonDetails from '../screens/PokemonDetails';
-import NavBar from "../screens/NavBar/index"
+import NavBar from "../components/NavBar"
 
 export default function Router() {
-  const [pokedexList, setPokedexList] = useState([]);
-  const [pokedexHomeList, setPokedexHomeList] = useState([]);
-
   return (
     <BrowserRouter>
       <Switch>
-        <NavBar />
         <Route exact path={'/'}>
-          <Home pokedexList={pokedexList} setPokedexList={setPokedexList} pokedexHomeList={pokedexHomeList} setPokedexHomeList={setPokedexHomeList}/>
+          <NavBar title={"Lista de pokemons"}/>
+          <Home />
         </Route>
-        <NavBar />
         <Route exact path={'/pokedex'}>
-          <Pokedex pokedexList={pokedexList} setPokedexList={setPokedexList} pokedexHomeList={pokedexHomeList} setPokedexHomeList={setPokedexHomeList}/>
+          <NavBar title={"Pokedex"}/>
+          <Pokedex />
         </Route>
-        <NavBar />
         <Route exact path={'/poke-detail/:name'}>
+          <NavBar />
           <PokemonDetails />
         </Route>
         <Route>

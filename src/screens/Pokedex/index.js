@@ -1,4 +1,7 @@
-import {useHistory} from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+
+/*Contexts*/
+import GlobalStateContext from "../../global/GlobalStateContext";
 
 /*Components*/
 import Card from "../../components/Card";
@@ -13,25 +16,27 @@ import {
   Loading
 } from './styles';
 
-export default function Pokedex(props) {
-  const { pokedexList, pokedexHomeList, setPokedexHomeList } = props
-  const history = useHistory();
+export default function Pokedex() {
+  const { states, setters, requests } = useContext(GlobalStateContext);
+
+  useEffect(() => {
+    requests.orderPokemons()
+  }, [states, setters, requests]);
 
   const removePokedex = (newPokemon) => {
-    const index = pokedexList.findIndex((i) => i.id === newPokemon.id);
-    const newPokedex = [...pokedexHomeList, newPokemon]
-    setPokedexHomeList(newPokedex);
-    pokedexList.splice(index, 1)
+    const index = states.pokedexList.findIndex((i) => i.id === newPokemon.id);
+    const newPokedex = [...states.pokedexHomeList, newPokemon]
+    setters.setPokedexHomeList(newPokedex);
+    states.pokedexList.splice(index, 1)
   };
   
   return (
     <AppContainer>
-      <button onClick={() => history.push('/')}>Home</button>
       <CardsContainer>
-        {pokedexList.length === 0 ?
+        {states.pokedexList.length === 0 ?
           <Loading src={Pokeball}/>
         : (
-          pokedexList.map(pokemon => {
+          states.pokedexList.map(pokemon => {
             const pokemonName = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.substr(1).toLowerCase()}`
             return (
               <Card
