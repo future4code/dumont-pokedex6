@@ -15,3 +15,17 @@
 ## O que não funciona:
 
 - Desafios 2 e 3 não implementados.
+
+## Imagens 
+
+- Parte 1: 
+
+<img src="/src/img/parte1.gif"/>
+
+- Parte 2: 
+
+<img src="/src/img/parte2.gif"/>
+
+- Parte 3: 
+
+<img src="/src/img/parte3.gif"/>
