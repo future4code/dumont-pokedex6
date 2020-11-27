@@ -47,7 +47,7 @@ export default function PokedexDetails() {
     <div>
       {Object.entries(pokemon).length > 0 &&
         <PokeInfosContainer>
-          <TitlePage>{`${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.substr(1).toLowerCase()}`}</TitlePage>
+          <TitlePage>{pokemon.name}</TitlePage>
           <ImagesContainer>
             <ImgWrapper src={pokemon.sprites.front_default} />
             <ImgWrapper src={pokemon.sprites.back_default} />
@@ -68,10 +68,9 @@ export default function PokedexDetails() {
             <TypesContainer>
               {pokemon.types.length > 0 &&
                 pokemon.types.map((type, index) => {
-                  const powerName = `${type.type.name.charAt(0).toUpperCase()}${type.type.name.substr(1).toLowerCase()}`
                   return (
                     <div key={index}>
-                      <TypesPokemon>{powerName}</TypesPokemon>
+                      <TypesPokemon>{type.type.name}</TypesPokemon>
                     </div>
                   )
                 })

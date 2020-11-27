@@ -119,6 +119,7 @@ export const TypesPokemon = styled.span`
     font-weight: bold;
     padding: 5px;
     border-radius: 5px;
+    text-transform: capitalize;
 `
 export const MovesContainer = styled.div`
     background: #313131;
@@ -149,6 +150,7 @@ export const TitlePage = styled.h1`
     position: absolute;
     top: 0;
     color: #FFFFFF;
+    text-transform: capitalize;
 
     @media(max-width: 420px) {
         top: 120px;
