@@ -1,6 +1,6 @@
 # POKEDEX
 
-##Nome dos integrantes:
+## Nome dos integrantes:
 
 - Beatriz Yamashiro
 - João Vitor
