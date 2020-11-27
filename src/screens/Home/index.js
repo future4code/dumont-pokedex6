@@ -14,7 +14,7 @@ import {
   AppContainer,
   CardsContainer,
   Loading
-} from './styles';
+} from '../styles/commonStyles';
 
 
 export default function Home() {
