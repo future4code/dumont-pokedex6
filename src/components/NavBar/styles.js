@@ -1,38 +1,75 @@
 import styled from "styled-components";
 
 export const NavBarContainer = styled.div`
-  background: #fff;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 3px solid #FFFFFF;
   height: 80px;
-  width: 100%;
-  z-index: 10;
-  display: flex;
-  background-color: #f1f1f1;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background-color: #E82616;
+
+  @media(max-width: 420px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 300px;
+  }
 `;
 
+export const LogoAndButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; 
+`
+
 export const Logo = styled.img`
-  margin: 10px 10px 10px 10px;
   width: 60px;
   height: 60px;
+  margin-left: 10px;
+
   &:hover {
     cursor: pointer;
     opacity: 0.5;
+  }
+
+  @media(max-width: 420px) {
+    margin-right: 20px;
   }
 `;
 
 export const NavButtons = styled.button`
-  border-radius: 5px;
-  border: 1px solid #25692A;
-  background-color: #f1f1f1;
-  color: black;
-  height: 30px;
-  margin: 30px 20px 20px 20px;
-  cursor: pointer;
+  max-width: 150px; 
+  max-height: 40px;
+  background-color: #F2F2F2;
+  color: #313131;
   font-weight: bold;
-  padding: auto;
+  padding: 10px;
+  margin-left: 32px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+
   &:hover {
-    cursor: pointer;
-    opacity: 0.5;
+    transform: scale(1.1);
+  }
+
+  @media(max-width: 420px) {
+    width: 150px;
+    font-size: 18px;
+    max-height: 60px;
+    margin-left: 0;
   }
 
 `;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+export const Title = styled.h1`
+  color: #FFFFFF;
+  margin: 0 auto;
+`

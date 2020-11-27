@@ -29,6 +29,7 @@ const GlobalState = (props) => {
     if (pokedexHomeList.length === 0 && pokedexList.length === 0) {
       setPokedexHomeList(copyArray)
     } 
+
   }
 
   const orderPokemons = () => {
