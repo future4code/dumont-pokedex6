@@ -1,18 +1,17 @@
-POKEDEX
-Nome dos integrantes:
+# POKEDEX
 
-Beatriz Yamashiro
-João Vitor
-Ricardo Mejolaro
+##Nome dos integrantes:
 
-Link do Surge: www.link.com.br
+- Beatriz Yamashiro
+- João Vitor
+- Ricardo Mejolaro
 
-O que funciona:
+## Link do Surge: http://dumont-pokedex6.surge.sh/
 
-Item 1
-Item 2
+## O que funciona:
 
-O que não funciona:
+- Todos os requisitos solicitados e  desafio 1 responsividade.
 
-Item 3
-Item 4
+## O que não funciona:
+
+- Desafios 2 e 3 não implementados.
