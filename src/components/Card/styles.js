@@ -42,6 +42,7 @@ export const PokemonName = styled.p`
   font-weight: bold;
   margin: 0;
   margin-left: 10px;
+  text-transform: capitalize;
 `
 export const ButtonContainer = styled.div`
   display: flex;

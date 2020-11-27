@@ -39,13 +39,12 @@ export default function Home() {
           <Loading src={Pokeball} />
           : (
             states.pokedexHomeList.map(pokemon => {
-              const pokemonName = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.substr(1).toLowerCase()}`
               return (
                 <Card
                   key={pokemon.id}
                   image={pokemon.sprites.front_default}
                   number={pokemon.order}
-                  name={pokemonName}
+                  name={pokemon.name}
                   addPokedex={() => addPokedex(pokemon)}
                 />)
             })

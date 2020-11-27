@@ -39,16 +39,17 @@ export const Logo = styled.img`
 `;
 
 export const NavButtons = styled.button`
-  max-width: 150px; 
-  max-height: 40px;
-  background-color: #F2F2F2;
-  color: #313131;
+  max-width: 200px; 
+  max-height: 50px;
+  background-color: #313131;
+  color: #f2f2f2;
   font-weight: bold;
   padding: 10px;
   margin-left: 32px;
   border-radius: 10px;
   border: none;
   outline: none;
+  text-align: center;
   cursor: pointer;
   transition: all 400ms ease-in-out;
 
